@@ -68,18 +68,19 @@ bot.onText(/\/всі повідомлення/, async (msg, match) => {
 
 if (allMess) {
     const messJson = JSON.stringify(allMess)
-    const mess = JSON.parse(a)
+    const mess = JSON.parse(messJson)
 
-    for (let i = 0; i < b.length; i++) {
+    for (let i = 0; i < mess.length; i++) {
 
         const user = mess[i]
 
-        bot.sendMessage(chatId,
+       bot.sendMessage(chatId,
             `час надсилання повідомлення: ${user.created_at} \n ` +
             `ім'я відправника: ${user.name}\n` +
             `номер телефону відправника: ${user.phone}\n ` +
             `повідомлення відправника ${user.message}`)
     }
+
 }
 
 else {
